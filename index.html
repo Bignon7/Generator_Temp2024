@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daily Pusher</title>
+    <link rel="icon" href="./assets/quote.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <img src="./assets/sky.jpg" class="background" alt="background" />
+      <div class="quote-box">
+        <p class="message">
+          <span id="quote-text">
+            All your dreams can come true if you have the courage to pursue
+            them.
+          </span>
+          <br />
+          <span id="quote-author"> --Author </span>
+        </p>
+      </div>
+
+      <div class="circle-wrapper">
+        <!-- Circles will be generated here -->
+      </div>
+    </div>
+
+    <div class="controls">
+      <select id="language-selector">
+        <option value="en">English</option>
+        <option value="fr">Français</option>
+        <option value="es">Español</option>
+      </select>
+      <button id="generate-btn">Générer</button>
+    </div>
+
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: "Josefin Slab", serif;
+}
+
+body {
+  background-color: #021027;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.background {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  mask-image: radial-gradient(
+    white 0%,
+    white 30%,
+    transparent 80%,
+    transparent
+  );
+}
+
+.circle-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  background-image: radial-gradient(
+    hsl(180, 100%, 80%),
+    hsla(180, 100%, 80%, 0) 56%
+  );
+  mix-blend-mode: screen;
+  animation: move 30s linear infinite, fade 2s infinite;
+}
+
+@keyframes move {
+  0% {
+    transform: translateY(-120vh);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes message-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/*  */
+.controls {
+  position: absolute;
+  /* top: 85%; */
+  right: 20px;
+  /* left: 50%;
+  transform: translateX(-50%); */
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+#language-selector,
+#generate-btn {
+  padding: 10px 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: white;
+  font-family: "Josefin Slab", serif;
+  cursor: pointer;
+  border-radius: 5px;
+  outline: none;
+}
+
+#generate-btn:hover,
+#language-selector:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.quote-box {
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
+  max-width: 30%;
+  background-color: transparent;
+  color: white;
+  font-size: 18px;
+  text-align: right;
+}
+
+.message {
+  line-height: 27px;
+  font-weight: lighter;
+  font-size: 18px;
+  user-select: none;
+  pointer-events: none;
+  animation: message-fade 1.2s ease 3s forwards;
+  opacity: 0;
+  /* position: absolute;
+  right: 20px;
+  bottom: 10px;
+  color: white;
+  text-align: right;
+  pointer-events: none;
+  animation: message-fade 1.2s ease 5s forwards;
+  opacity: 0; */
+}
+
+@media screen and (max-width: 600px) {
+  .quote-box {
+    max-width: 60%;
+  }
+}
