@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function adjustControlsPosition() {
     const quoteBoxHeight = quoteBox.offsetHeight;
-    controls.style.bottom = `${quoteBoxHeight + 20}px`;
+    controls.style.bottom = `${quoteBoxHeight + 30}px`;
   }
 
   // Adjust position on page load
